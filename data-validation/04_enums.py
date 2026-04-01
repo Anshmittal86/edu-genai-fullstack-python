@@ -12,3 +12,4 @@ class User(BaseModel):
     
 user = User(name='aman',gender="male")
 
+    
