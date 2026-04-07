@@ -2,7 +2,7 @@
 
 # Python Don't enforce the type of the variable
  
-from typing import List, Dict, Tuple, Optional, Literal, TypedDict, Callable
+from typing import List, Dict, Tuple, Optional, Literal, TypedDict, Callable, TypeAlias, NoReturn
 
 def add(a: int, b: int) -> int:
     return a + b
@@ -19,9 +19,7 @@ print(result)
 # - pydantic ---> checking type at runtime
 
 # uv run file_name
-
 # uv run mypy file_name
-
 
 # Typing Types
 
@@ -124,5 +122,44 @@ def apply_operation(
 def add(x: int, y: int) -> int:
     return x + y
 
-print(apply_operation(12, 15, add))
+def multiply(x: int, y: int) -> int:
+    return x * y
 
+print(apply_operation(12, 15, add))
+print(apply_operation(12, 15, multiply))
+
+
+#9. Type Alias - Gives a name to complex types
+
+UserId: TypeAlias = int
+JsonResponse: TypeAlias = dict[str, list[dict[str, str | int]]]
+
+def fetch_user(uid: UserId) -> JsonResponse:
+    return {"data": [{'name': "aman", 'age': 12}]}
+
+# 10. Type Narrowing - Type check using isinstance()
+# This is Python's version of typescript's typeof guard
+
+def process(value: str | int | list[str]) -> str:
+    if isinstance(value, str):
+        return value.upper()
+    
+    if isinstance(value, int):
+        return str(value * 2)
+    
+    return ", ".join(value)
+
+print(process("hello")) # HELLO
+print(process(21)) # 42
+print(process(["a", "b", "c"])) # a, b, c
+
+
+# 11. None Return vs No Return 
+
+# None return - function does its job but returns nothing
+def save_log(msg: str) -> None:
+    print(msg)
+    
+# NoReturn - function NEVER returns (crash / infinite loop)
+def raise_error(msg: str) -> NoReturn:
+    raise RuntimeError(msg)
