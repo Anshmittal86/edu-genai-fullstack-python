@@ -1,0 +1,86 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+env/
+.venv/
+ENV/
+
+# =========================
+# Environment Variables (VERY IMPORTANT)
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Model / Data Files (GenAI specific)
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.h5
+
+# Large datasets
+data/
+datasets/
+
+# =========================
+# Cache / Temp
+# =========================
+.cache/
+temp/
+tmp/
+
+# =========================
+# API Keys / Secrets
+# =========================
+secrets.json
+config.json
+
+# =========================
+# Node (if using frontend)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Misc
+# =========================
+*.zip
+*.tar.gz
