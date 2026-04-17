@@ -42,8 +42,6 @@ SYSTEM_PROMPT="""
     OUTPUT: { 'step: 'OUTPUT', content: 'Boil water, add tea leaves, sugar and milk cook for 2-3 minutes, strain and serve hot.' }
 """
 
-
-
 message_history=[
     { 'role': 'system', 'content': SYSTEM_PROMPT },
 ]
