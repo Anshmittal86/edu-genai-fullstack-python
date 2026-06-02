@@ -5,8 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "langchain-google-genai>=4.2.4",
+    "langchain[agent,agents,openai]>=1.2.15",
+    "numpy>=2.4.4",
     "openai>=2.32.0",
+    "playsound3>=3.3.1",
     "pydantic>=2.13.1",
     "python-dotenv>=1.2.2",
     "requests>=2.33.1",
+    "sounddevice>=0.5.5",
+    "speechrecognition>=3.16.0",
 ]
